@@ -19,6 +19,10 @@ foreach (var item in oddNumberQry)
     System.Console.WriteLine(item);
 }
 ```
+Shorthand version
+```
+var qry = numbers.Where(it => it % 2 == 0);
+```
 
 ## Execution
 **Deferred Execution**  
@@ -59,4 +63,14 @@ foreach (var item in oddStudentQry)
 {
     System.Console.WriteLine($"Id: {item.Id}, Name: {item.Name}");
 }
+```
+Shorthand version
+```
+var qry = numbers
+                .Where(it => it % 2 == 0)
+                .Select(it => new Student
+                {
+                    Id = it,
+                    Name = it.ToString()
+                });
 ```
